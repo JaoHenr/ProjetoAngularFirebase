@@ -10,6 +10,23 @@ import { MessageService } from '../services/message.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  pefil = {
+    foto : '',
+    nome : '',
+    profissao: '',
+    citacao : '',
+    idioma : '',
+    cidade: '',
+    atuacao: '',
+    bio: '',
+    
+    metragem : {
+      curtidas : '',
+      seguindo: '',
+      amigos: '',
+    }
+  }
 
-  constructor(){ }
+  
+  
 }
