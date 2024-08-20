@@ -80,6 +80,18 @@ export class HomePage {
     
   ]
 
+  treinos = [
+    {
+      nome: 'Corrida de Biga Romana',
+      series: 3,
+      foto: 'https://onjornal.com/site/arquivos/imagens/noticias/grande/20231126141658esportes-que-ja-foram-populares-no-passado-mas-que-acabaram-sendo-extintos-2.jpg',
+    },
+    {
+      nome: 'Agachamento Sumô',
+      series: 3,
+      foto: 'https://blog.totalpass.com.br/wp-content/uploads/2024/04/agachamento-sumo.jpg',
+    }
+  ]
   constructor(){}
 
   trocar(event: any){
