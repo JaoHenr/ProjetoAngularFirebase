@@ -11,5 +11,16 @@ import { MessageService } from '../services/message.service';
 })
 export class HomePage {
 
-  constructor(){ }
+  user: any = {
+    email: null,
+    password: null
+  }
+
+  constructor(
+    public authService: AuthenticateService
+  ){ }
+
+  acessar(){
+    this.authService.login(this.user.email, this.user.password);
+  }
 }
