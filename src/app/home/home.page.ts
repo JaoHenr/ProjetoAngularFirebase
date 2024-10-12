@@ -10,17 +10,40 @@ import { MessageService } from '../services/message.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  user: any = {
-    email: null,
-    password: null
+  aluno:any = {
+    nome: null
   }
+  alunos: any;
 
   constructor(
-    public authService: AuthenticateService
-  ){ }
+    public crudService: CrudService
+  ){ 
+    this.getAlunos();
+  }
 
-  acessar(){
-    this.authService.login(this.user.email, this.user.password);
+  salvar(){
+    this.crudService.insert(this.aluno,'aluno');
+    this.getAlunos();
+    }
+
+  deletar(aluno: any){
+    this.crudService.remove(aluno.id,'aluno')
+    .then(()=> {
+      this.getAlunos();
+    })
+
+    this.getAlunos()
+      
+    }
+    getAluno(){
+      
+    }
+
+    getAlunos(){
+      this.crudService.fetchAll('aluno')
+      .then(response => {
+      console.log(response);
+      this.alunos = response;
+    })
   }
 }

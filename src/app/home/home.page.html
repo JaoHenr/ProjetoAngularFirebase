@@ -1,21 +1,21 @@
 <ion-content [fullscreen]="true">
 
-  <ion-row class="ion-justify-content-center">
-    <ion-col size="6">
-      <ion-item>
-        <ion-label>
-          <h1>Login</h1>
-        </ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-input [(ngModel)]="this.user.email" type="email" label="E-mail" placeholder="E-mail"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input [(ngModel)]="this.user.password" type="password" label="Senha" placeholder="***"></ion-input>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-button (click)="acessar()">Acessar</ion-button>
-      </ion-item>
+  <ion-row>
+    <ion-col size="4">
+      Nome do Aluno : {{ this.aluno.nome }}
+      <ion-input label="nome" [(ngModel)]="this.aluno.nome"></ion-input>
+      <ion-button (click)="salvar()">Salvar</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ng-container *ngFor="let aluno of this.alunos">
+        <ion-item>
+          <ion-label>{{ aluno.nome }}</ion-label>
+          <ion-icon name="trash-outline" click()="deletar(aluno)"></ion-icon>
+        </ion-item>
+      </ng-container>
     </ion-col>
   </ion-row>
 
