@@ -1,22 +1,5 @@
 <ion-content [fullscreen]="true">
 
-  <ion-row>
-    <ion-col size="4">
-      Nome do Aluno : {{ this.aluno.nome }}
-      <ion-input label="nome" [(ngModel)]="this.aluno.nome"></ion-input>
-      <ion-button (click)="salvar()">Salvar</ion-button>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col>
-      <ng-container *ngFor="let aluno of this.alunos">
-        <ion-item>
-          <ion-label>{{ aluno.nome }}</ion-label>
-          <ion-icon name="trash-outline" click()="deletar(aluno)"></ion-icon>
-        </ion-item>
-      </ng-container>
-    </ion-col>
-  </ion-row>
+  
 
 </ion-content>
